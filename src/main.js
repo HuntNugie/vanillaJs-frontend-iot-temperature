@@ -1,7 +1,8 @@
+import { getData } from '../utils/api.js';
 import { app } from './app.js';
 import './style.css'
 
-const api = import.meta.env.VITE_LOCAL_API
-
-
-document.querySelector("#app").innerHTML = app();
+setInterval(async()=>{
+    const data = await getData();
+    document.querySelector("#app").innerHTML = app(data);
+},2000)
