@@ -2,7 +2,7 @@ import { grafik } from "./components/grafik.js";
 import { kelembapan } from "./components/kelembapan.js";
 import { suhu } from "./components/suhu.js";
 import { suhuBarang } from "./components/suhuBarang.js";
-export const app = (data = {}) => {
+export const app = () => {
   return ` 
 
     <!-- Halaman Dashboard -->
@@ -10,13 +10,12 @@ export const app = (data = {}) => {
 
       <!-- 3 Card Atas -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-       ${suhu(data.suhu)}
-
+       ${suhu()}
         <!-- Kelembapan -->
-        ${kelembapan(data.kelembapan)}
+        ${kelembapan()}
 
         <!-- Suhu Barang Dekat -->
-        ${suhuBarang(data.realSuhu)}
+        ${suhuBarang()}
       </div>
 
      ${grafik()}
